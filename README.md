@@ -205,18 +205,6 @@ for deployment compatibility.
 
 ---
 
-# 📸 Screenshots
-
-> Add screenshots of your application here.
-
-- Home Page
-- AI Study Notes
-- Flashcards
-- Quiz
-- Study History
-
----
-
 # 💡 How It Works
 
 1. Enter any study topic.
