@@ -19,7 +19,6 @@ export default function App() {
     { label: "JWT Authentication", query: "JSON Web Tokens (JWT) authentication mechanism and security" }
   ];
 
-  // Load saved sessions from localStorage on mount
   useEffect(() => {
     try {
       const stored = localStorage.getItem('intellect_ai_sessions');
@@ -64,7 +63,7 @@ export default function App() {
     setStudyData(null);
 
     try {
-      const response = await fetch('http://localhost:5001/api/generate', {
+      const response = await fetch('https://study-assistant-backend-kc4i.onrender.com/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ topic: targetTopic }),
@@ -127,21 +126,14 @@ export default function App() {
         <div className="absolute top-[35%] left-[40%] w-[350px] h-[350px] bg-amber-500/5 rounded-full blur-[110px] animate-blob-slow" style={{ animationDelay: '4s' }} />
       </div>
 
-      {/* 2. Floating Cyber Blocks - Endless Continuous Stream (using negative animation delays) */}
+      {/* 2. Floating Cyber Blocks - Fixed, High-Visibility, Fast Floating System */}
       <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
-        {/* Wave 1: Already active on page load (Negative delays) */}
-        <div className="absolute bottom-0 left-[8%] w-12 h-12 border-2 border-amber-500/40 rounded-lg animate-floating-block" style={{ animationDelay: '-2s', animationDuration: '14s' }} />
-        <div className="absolute bottom-0 left-[28%] w-8 h-8 bg-amber-500/10 border border-amber-500/40 rounded animate-floating-block" style={{ animationDelay: '-6s', animationDuration: '11s' }} />
-        <div className="absolute bottom-0 right-[15%] w-16 h-16 border-2 border-amber-500/30 rounded-xl animate-floating-block" style={{ animationDelay: '-10s', animationDuration: '16s' }} />
-        <div className="absolute bottom-0 right-[42%] w-10 h-10 border border-amber-500/40 rounded-lg animate-floating-block" style={{ animationDelay: '-4s', animationDuration: '13s' }} />
-        
-        {/* Wave 2: Staggered entry from screen bottom (Positive delays) */}
-        <div className="absolute bottom-0 left-[62%] w-6 h-6 bg-amber-500/20 border border-amber-500/40 rounded animate-floating-block" style={{ animationDelay: '4s', animationDuration: '9s' }} />
-        <div className="absolute bottom-0 left-[48%] w-14 h-14 border-2 border-amber-500/30 rounded-xl animate-floating-block" style={{ animationDelay: '2s', animationDuration: '15s' }} />
-        <div className="absolute bottom-0 left-[80%] w-10 h-10 border border-amber-500/20 rounded animate-floating-block" style={{ animationDelay: '6s', animationDuration: '12s' }} />
-        <div className="absolute bottom-0 left-[18%] w-14 h-14 border-2 border-amber-500/30 rounded-xl animate-floating-block" style={{ animationDelay: '8s', animationDuration: '16s' }} />
-        <div className="absolute bottom-0 right-[28%] w-8 h-8 bg-amber-500/10 border border-amber-500/40 rounded animate-floating-block" style={{ animationDelay: '1s', animationDuration: '10s' }} />
-        <div className="absolute bottom-0 left-[38%] w-12 h-12 border border-amber-500/20 rounded-lg animate-floating-block" style={{ animationDelay: '10s', animationDuration: '14s' }} />
+        <div className="absolute bottom-0 left-[8%] w-12 h-12 border-2 border-amber-500/40 rounded-lg animate-floating-block" style={{ animationDelay: '0s', animationDuration: '16s' }} />
+        <div className="absolute bottom-0 left-[28%] w-8 h-8 bg-amber-500/10 border border-amber-500/40 rounded animate-floating-block" style={{ animationDelay: '3s', animationDuration: '12s' }} />
+        <div className="absolute bottom-0 right-[15%] w-16 h-16 border-2 border-amber-500/30 rounded-xl animate-floating-block" style={{ animationDelay: '6s', animationDuration: '18s' }} />
+        <div className="absolute bottom-0 right-[42%] w-10 h-10 border border-amber-500/40 rounded-lg animate-floating-block" style={{ animationDelay: '1.5s', animationDuration: '14s' }} />
+        <div className="absolute bottom-0 left-[62%] w-6 h-6 bg-amber-500/20 border border-amber-500/40 rounded animate-floating-block" style={{ animationDelay: '8s', animationDuration: '10s' }} />
+        <div className="absolute bottom-0 left-[48%] w-14 h-14 border-2 border-amber-500/30 rounded-xl animate-floating-block" style={{ animationDelay: '4s', animationDuration: '17s' }} />
       </div>
 
       {/* Navigation Header */}
