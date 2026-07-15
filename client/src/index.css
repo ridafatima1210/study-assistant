@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .perspective {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Custom elite entry animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium Dark-Mode Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617; /* slate-950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* slate-800 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* slate-700 */
+}
+
+/* Custom ambient drifting background keyframes */
+@keyframes drift {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes drift-reverse {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-50px, 50px) scale(0.85);
+  }
+  66% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob-slow {
+  animation: drift 25s infinite ease-in-out;
+}
+
+.animate-blob-reverse {
+  animation: drift-reverse 30s infinite ease-in-out;
+}
+
+/* Floating background block elements keyframes - PERFECT VERTICAL VIEWPORT COVERAGE */
+@keyframes float-blocks {
+  0% {
+    transform: translateY(10vh) rotate(0deg); /* Starts just below the bottom edge */
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85; /* Highly visible glow */
+  }
+  90% {
+    opacity: 0.85; /* Remains clearly visible throughout the entire rise */
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg); /* Travels completely past the top of the screen */
+    opacity: 0;
+  }
+}
+
+.animate-floating-block {
+  animation: float-blocks 16s infinite linear !important; /* Constant, seamless non-stop speed */
+}
